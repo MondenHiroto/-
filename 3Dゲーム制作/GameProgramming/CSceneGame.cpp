@@ -44,53 +44,128 @@ void CSceneGame::Init() {
 
 	mModelCube.Load("cube.obj", "cube.mtl");
 	//外壁
+	//後ろ
+	new CCube(&mModelCube, CVector(0.0f, -1.0f, 150.0f),
+		CVector(), CVector(150.0f, 10.0f, 10.0f));
+	//前
 	new CCube(&mModelCube, CVector(0.0f, -1.0f, -130.0f),
-		CVector(), CVector(140.0f, 10.0f, 5.0f));
+		CVector(), CVector(150.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(0.0f, -1.0f, 130.0f),
-		CVector(), CVector(140.0f, 10.0f, 5.0f));
+	//右
+	new CCube(&mModelCube, CVector(140.0f, -1.0f, 0.0f),
+		CVector(), CVector(10.0f, 10.0f, 150.0f));
+	//左
+	new CCube(&mModelCube, CVector(-140.0f, -1.0f, 0.0f),
+		CVector(), CVector(10.0f, 10.0f, 150.0f));
 
-	new CCube(&mModelCube, CVector(130.0f, -1.0f, 0.0f),
-		CVector(), CVector(5.0f, 10.0f, 140.0f));
-
-	new CCube(&mModelCube, CVector(-130.0f, -1.0f, 0.0f),
-		CVector(), CVector(5.0f, 10.0f, 140.0f));
 	//障害物
-	new CCube(&mModelCube, CVector(-100.0f, -1.0f, 0.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
-
-	new CCube(&mModelCube, CVector(-70.0f, -1.0f, 0.0f),
+	//0.5列
+	new CCube(&mModelCube, CVector(20.0f, -1.0f, -110.0f),
 		CVector(), CVector(10.0f, 10.0f, 30.0f));
 
-	new CCube(&mModelCube, CVector(-70.0f, -1.0f, 50.0f),
+	//前から一列目
+	new CCube(&mModelCube, CVector(-100.0f, -1.0f, -90.0f),
 		CVector(), CVector(10.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(-70.0f, -1.0f, -50.0f),
+	new CCube(&mModelCube, CVector(-20.0f, -1.0f, -90.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(60.0f, -1.0f, -90.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(100.0f, -1.0f, -90.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	//1.5列
+	new CCube(&mModelCube, CVector(-60.0f, -1.0f, -70.0f),
+		CVector(), CVector(10.0f, 10.0f, 30.0f));
+
+	//二列目
+	new CCube(&mModelCube, CVector(-100.0f, -1.0f, -50.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(-20.0f, -1.0f, -50.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(20.0f, -1.0f, -50.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(80.0f, -1.0f, -50.0f),
 		CVector(), CVector(30.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(-40.0f, -1.0f, 0.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
-
-	new CCube(&mModelCube, CVector(100.0f, -1.0f, 0.0f),
+	//2.5列
+	new CCube(&mModelCube, CVector(100.0f, -1.0f, -30.0f),
 		CVector(), CVector(10.0f, 10.0f, 30.0f));
 
-	new CCube(&mModelCube, CVector(115.0f, -1.0f, 0.0f),
-		CVector(), CVector(20.0f, 10.0f, 10.0f));
+	//三列目
+	new CCube(&mModelCube, CVector(-120.0f, -1.0f, -10.0f),
+		CVector(), CVector(30.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(50.0f, -1.0f, 30.0f),
+	new CCube(&mModelCube, CVector(-20.0f, -1.0f, -10.0f),
 		CVector(), CVector(10.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(60.0f, -1.0f, 100.0f),
-		CVector(), CVector(20.0f, 10.0f, 10.0f));
-
-	new CCube(&mModelCube, CVector(100.0f, -1.0f, 100.0f),
+	new CCube(&mModelCube, CVector(20.0f, -1.0f, -10.0f),
 		CVector(), CVector(10.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(60.0f, -1.0f, -100.0f),
-		CVector(), CVector(20.0f, 10.0f, 10.0f));
+	new CCube(&mModelCube, CVector(60.0f, -1.0f, -10.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(120.0f, -1.0f, -10.0f),
+		CVector(), CVector(30.0f, 10.0f, 10.0f));
+
+	//3.5列
+	new CCube(&mModelCube, CVector(-60.0f, -1.0f, 10.0f),
+		CVector(), CVector(10.0f, 10.0f, 30.0f));
+
+	//四列目
+	new CCube(&mModelCube, CVector(-100.0f, -1.0f, 30.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(-0.0f, -1.0f, 30.0f),
+		CVector(), CVector(30.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(60.0f, -1.0f, 30.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(100.0f, -1.0f, 30.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	//4.5列
+	new CCube(&mModelCube, CVector(-20.0f, -1.0f, 50.0f),
+		CVector(), CVector(10.0f, 10.0f, 30.0f));
+
+	//五列目
+	new CCube(&mModelCube, CVector(-100.0f, -1.0f, 70.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(-60.0f, -1.0f, 70.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+	
+	new CCube(&mModelCube, CVector(60.0f, -1.0f, 70.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(100.0f, -1.0f, 70.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	//5.5列
+	new CCube(&mModelCube, CVector(20.0f, -1.0f, 90.0f),
+		CVector(), CVector(10.0f, 10.0f, 30.0f));
+
+	//六列目
+	new CCube(&mModelCube, CVector(-100.0f, -1.0f, 110.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(-60.0f, -1.0f, 110.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(-20.0f, -1.0f, 110.0f),
+		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(80.0f, -1.0f, 110.0f),
+		CVector(), CVector(30.0f, 10.0f, 10.0f));
 
 	//ビルボードの生成
-	new CBillBoard(CVector(-6.0f, 3.0f, -10.0f), 1.0f, 1.0f);
+	//new CBillBoard(CVector(-6.0f, 3.0f, -10.0f), 1.0f, 1.0f);
 	//三角コライダの確認
 	/*mColliderTriangle.Set(NULL, NULL
 		, CVector(-50.0f, 0.0f, -50.0f)
@@ -150,8 +225,6 @@ void CSceneGame::Update() {
 	{
 		mEye.mY -= 0.1f;
 	}
-
-	
 
 //	mPlayer.Update(); //行列の更新
 	//カメラのパラメータを作成する

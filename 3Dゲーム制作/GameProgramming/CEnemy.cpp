@@ -53,6 +53,7 @@ void CEnemy::Collision(CCollider *m, CCollider *o){
 		if (CCollider::CollisionTrianglesSphere(o, m, &adjust))
 		{      //è’ìÀÇµÇ»Ç¢à íuÇ‹Ç≈ñﬂÇ∑
 			mPosition = mPosition + adjust;
+			mRotation.mZ++;
 		}
 		break;
 	}

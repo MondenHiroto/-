@@ -35,7 +35,7 @@ void CPlayer::Update(){
 	//上矢印キー入力で前進
 	if (CKey::Push(VK_UP)){
 		//Z軸方向に1進んだ値を回転移動させる
-		mPosition = CVector(0.0f, 0.0f, 2.0f) * mMatrix;
+		mPosition = CVector(0.0f, 0.0f, 3.0f) * mMatrix;
 	}
 
 	if (CKey::Push(VK_DOWN)){
@@ -43,7 +43,7 @@ void CPlayer::Update(){
 	}
 
 	if (CKey::Push('W')){
-		mPosition = CVector(0.0f, 0.0f, 4.0f) * mMatrix;
+		mPosition = CVector(0.0f, 0.0f, 5.0f) * mMatrix;
 	}
 	//CCharacterの更新
 	CTransform::Update();
