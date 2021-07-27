@@ -9,14 +9,21 @@ CPlayer::CPlayer()
 : mLine(this, &mMatrix, CVector(0.0f, 0.0f, -14.0f), CVector(0.0f, 0.0f, 17.0f))
 , mLine2(this, &mMatrix, CVector(0.0f, 5.0f, -8.0f), CVector(0.0f, -3.0f, -8.0f))
 , mLine3(this, &mMatrix, CVector(9.0f, 0.0f, -8.0f), CVector(-9.0f, 0.0f, -8.0f))
+, Stamina(300)
+, mCollider1(this, &mMatrix, CVector(0.0f, 0.0f, 15.0f), 3.8f)
 {//テクスファイの読み込み(1行64列)
 	mText.LoadTexture("FontWhite.tga", 1, 64);
+	mTag = EPLAYER;
 }
 
 //更新処理
 void CPlayer::Update(){
 	if (Time > 0){
 		Time--;
+	}
+
+	if (Stamina < 300 && !CKey::Push('W')){
+		Stamina++;
 	}
 	//Aキー入力で回転
 	if (CKey::Push('A')){
@@ -26,24 +33,57 @@ void CPlayer::Update(){
 	if (CKey::Push('D')){
 		mRotation.mY += -3; 
 	}
+	//右矢印キー入力で右移動
 	if (CKey::Push(VK_RIGHT)){
-		mPosition = CVector(-2.0f, 0.0f, 0.0f) * mMatrix;
+		mPosition = CVector(-3.5f, 0.0f, 0.0f) * mMatrix;
 	}
+	//左矢印キー入力で左移動
 	if (CKey::Push(VK_LEFT)){
-		mPosition = CVector(2.0f, 0.0f, 0.0f) *mMatrix;
+		mPosition = CVector(3.5f, 0.0f, 0.0f) *mMatrix;
 	}
 	//上矢印キー入力で前進
 	if (CKey::Push(VK_UP)){
 		//Z軸方向に1進んだ値を回転移動させる
-		mPosition = CVector(0.0f, 0.0f, 3.0f) * mMatrix;
+		mPosition = CVector(0.0f, 0.0f, 3.5f) * mMatrix;
 	}
 
+	//上矢印キーと右矢印キー同時入力で右斜め前進
+	if (CKey::Push(VK_UP) && CKey::Push(VK_RIGHT)){
+		//Z軸方向に1進んだ値を回転移動させる
+		mPosition = CVector(-3.5f, 0.0f, 3.5f) * mMatrix;
+	}
+
+	//上矢印キーと左矢印キー同時入力で右斜め前進
+	if (CKey::Push(VK_UP) && CKey::Push(VK_LEFT)){
+		//Z軸方向に1進んだ値を回転移動させる
+		mPosition = CVector(3.5f, 0.0f, 3.5f) * mMatrix;
+	}
+
+	//下矢印キー入力で後退
 	if (CKey::Push(VK_DOWN)){
-		mPosition = CVector(0.0f, 0.0f, -2.0f) * mMatrix;
+		mPosition = CVector(0.0f, 0.0f, -3.5f) * mMatrix;
 	}
 
-	if (CKey::Push('W')){
-		mPosition = CVector(0.0f, 0.0f, 5.0f) * mMatrix;
+	//下矢印キーと右矢印キー同時入力で右斜め後退
+	if (CKey::Push(VK_DOWN) && CKey::Push(VK_RIGHT)){
+		//Z軸方向に1進んだ値を回転移動させる
+		mPosition = CVector(-3.5f, 0.0f, -3.5f) * mMatrix;
+	}
+
+	//下矢印キーと左矢印キー同時入力で左斜め後退
+	if (CKey::Push(VK_DOWN) && CKey::Push(VK_LEFT)){
+		//Z軸方向に1進んだ値を回転移動させる
+		mPosition = CVector(3.5f, 0.0f, -3.5f) * mMatrix;
+	}
+
+	//ダッシュ
+	if (Stamina > 0 && CKey::Push('W')){
+		Stamina--;
+		mPosition = CVector(0.0f, 0.0f, 7.0f) * mMatrix;
+	}
+	//スタミナが0になったとき
+	if (Stamina == 0 && CKey::Push('W')){
+		mPosition = CVector(0.0f, 0.0f, 3.5f) * mMatrix;
 	}
 	//CCharacterの更新
 	CTransform::Update();
@@ -87,6 +127,12 @@ void CPlayer::Render()
 	sprintf(buf, "TIME:%d",Time / 60);
 	//文字列の描画
 	mText.DrawString(buf, 200, 270, 8, 16);
+
+	//Y座標の表示
+	//文字列の設定
+	sprintf(buf, "STAMINA:%d", Stamina);
+	//文字列の描画
+	mText.DrawString(buf, 0, 270, 8, 16);
 
 	//2Dの描画終了
 	CUtil::End2D();

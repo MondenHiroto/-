@@ -60,5 +60,12 @@ public:
 		CCollisionManager::Get()->Remove(this); //ˆê’Uíœ
 		CCollisionManager::Get()->Add(this); //’Ç‰Á
 	}
+
+	enum ETag
+	{
+		EBODY,
+		ESEARCH,
+	};
+	ETag mTag;
 };
 #endif

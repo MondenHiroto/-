@@ -5,6 +5,7 @@
 #include "CBullet.h"
 #include "CColliderLine.h"
 #include "CText.h"
+#include "CCollider.h"
 /*
 プレイヤークラス
 キャラクタクラスを継承
@@ -17,7 +18,7 @@ public:
 	CColliderLine mLine; //線分コライダ
 	CColliderLine mLine2;
 	CColliderLine mLine3;
-
+	CCollider mCollider1;
 	CPlayer();
 
 	//衝突処理
@@ -26,6 +27,8 @@ public:
 	CText mText;
 	//描画処理
 	void Render(); 
+
+	int Stamina;
 
 	int Time = 301 * 60;
 };

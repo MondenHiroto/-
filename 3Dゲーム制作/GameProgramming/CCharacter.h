@@ -25,6 +25,12 @@ public:
 
 	//Õ“Ëˆ—
 	virtual void Collision(CCollider *m, CCollider *o){}
+
+	enum ETag{
+		EPLAYER,
+		EENEMY
+	};
+	ETag mTag;
 };
 
 

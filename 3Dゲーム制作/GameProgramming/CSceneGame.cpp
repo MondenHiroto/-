@@ -20,7 +20,6 @@
 
 #include "CCamera.h"
 
-
 //C5モデル
 CModel mModelSkull;
 
@@ -40,8 +39,8 @@ void CSceneGame::Init() {
 	mModelSkull.Load("Skull.obj", "Skull.mtl");
 	//敵機のインスタンス作成
 	new CEnemy(&mModelSkull, CVector(0.0f, 1.0f, -100.0f),
-		CVector(-90.0f,0.0f,0.0f) , CVector(0.2f, 0.2f, 0.2f));
-
+		CVector(-0.0f,0.0f,0.0f) , CVector(0.2f, 0.2f, 0.2f));
+	
 	mModelCube.Load("cube.obj", "cube.mtl");
 	//外壁
 	//後ろ
@@ -84,16 +83,17 @@ void CSceneGame::Init() {
 	new CCube(&mModelCube, CVector(-100.0f, -1.0f, -50.0f),
 		CVector(), CVector(10.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(-20.0f, -1.0f, -50.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
-
-	new CCube(&mModelCube, CVector(20.0f, -1.0f, -50.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
+	new CCube(&mModelCube, CVector(0.0f, -1.0f, -50.0f),
+		CVector(), CVector(30.0f, 10.0f, 10.0f));
 
 	new CCube(&mModelCube, CVector(80.0f, -1.0f, -50.0f),
 		CVector(), CVector(30.0f, 10.0f, 10.0f));
 
 	//2.5列
+	new CCube(&mModelCube, CVector(-20.0f, -1.0f, -30.0f),
+		CVector(), CVector(10.0f, 10.0f, 30.0f));
+
+
 	new CCube(&mModelCube, CVector(100.0f, -1.0f, -30.0f),
 		CVector(), CVector(10.0f, 10.0f, 30.0f));
 
@@ -104,11 +104,8 @@ void CSceneGame::Init() {
 	new CCube(&mModelCube, CVector(-20.0f, -1.0f, -10.0f),
 		CVector(), CVector(10.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(20.0f, -1.0f, -10.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
-
-	new CCube(&mModelCube, CVector(60.0f, -1.0f, -10.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
+	new CCube(&mModelCube, CVector(40.0f, -1.0f, -10.0f),
+		CVector(), CVector(30.0f, 10.0f, 10.0f));
 
 	new CCube(&mModelCube, CVector(120.0f, -1.0f, -10.0f),
 		CVector(), CVector(30.0f, 10.0f, 10.0f));
@@ -117,29 +114,28 @@ void CSceneGame::Init() {
 	new CCube(&mModelCube, CVector(-60.0f, -1.0f, 10.0f),
 		CVector(), CVector(10.0f, 10.0f, 30.0f));
 
+
 	//四列目
-	new CCube(&mModelCube, CVector(-100.0f, -1.0f, 30.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
+
+	new CCube(&mModelCube, CVector(-80.0f, -1.0f, 30.0f),
+		CVector(), CVector(30.0f, 10.0f, 10.0f));
 
 	new CCube(&mModelCube, CVector(-0.0f, -1.0f, 30.0f),
 		CVector(), CVector(30.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(60.0f, -1.0f, 30.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
-
-	new CCube(&mModelCube, CVector(100.0f, -1.0f, 30.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
+	new CCube(&mModelCube, CVector(80.0f, -1.0f, 30.0f),
+		CVector(), CVector(30.0f, 10.0f, 10.0f));
 
 	//4.5列
 	new CCube(&mModelCube, CVector(-20.0f, -1.0f, 50.0f),
 		CVector(), CVector(10.0f, 10.0f, 30.0f));
-
+	
 	//五列目
 	new CCube(&mModelCube, CVector(-100.0f, -1.0f, 70.0f),
 		CVector(), CVector(10.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(-60.0f, -1.0f, 70.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
+	new CCube(&mModelCube, CVector(-40.0f, -1.0f, 70.0f),
+		CVector(), CVector(30.0f, 10.0f, 10.0f));
 	
 	new CCube(&mModelCube, CVector(60.0f, -1.0f, 70.0f),
 		CVector(), CVector(10.0f, 10.0f, 10.0f));
@@ -158,11 +154,12 @@ void CSceneGame::Init() {
 	new CCube(&mModelCube, CVector(-60.0f, -1.0f, 110.0f),
 		CVector(), CVector(10.0f, 10.0f, 10.0f));
 
-	new CCube(&mModelCube, CVector(-20.0f, -1.0f, 110.0f),
-		CVector(), CVector(10.0f, 10.0f, 10.0f));
-
 	new CCube(&mModelCube, CVector(80.0f, -1.0f, 110.0f),
 		CVector(), CVector(30.0f, 10.0f, 10.0f));
+
+	//6.5列
+	new CCube(&mModelCube, CVector(-20.0f, -1.0f, 130.0f),
+		CVector(), CVector(10.0f, 10.0f, 30.0f));
 
 	//ビルボードの生成
 	//new CBillBoard(CVector(-6.0f, 3.0f, -10.0f), 1.0f, 1.0f);
