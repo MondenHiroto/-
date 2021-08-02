@@ -20,8 +20,11 @@
 
 #include "CCamera.h"
 
+#include "CItem.h"
+
 //C5モデル
 CModel mModelSkull;
+CModel mModelItem;
 
 
 void CSceneGame::Init() {
@@ -38,9 +41,17 @@ void CSceneGame::Init() {
 	//スカルモデルの読み込み
 	mModelSkull.Load("Skull.obj", "Skull.mtl");
 	//敵機のインスタンス作成
-	new CEnemy(&mModelSkull, CVector(0.0f, 1.0f, -100.0f),
-		CVector(-0.0f,0.0f,0.0f) , CVector(0.2f, 0.2f, 0.2f));
+	new CEnemy(&mModelSkull, CVector(0.0f, 0.0f, -100.0f),
+		CVector(0.0f,0.0f,0.0f) , CVector(0.2f, 0.2f, 0.2f));
+
+	new CEnemy(&mModelSkull, CVector(0.0f, 0.0f, 100.0f),
+		CVector(0.0f, 0.0f, 0.0f), CVector(0.2f, 0.2f, 0.2f));
 	
+	//アイテムモデルの読み込み
+	mModelItem.Load("sphere.obj", "sphere.mtl");
+	new CItem(&mModelItem, CVector(0.0f, 3.0f, -100.0f),
+		CVector(0.0f, 0.0f, 0.0f), CVector(5.0f, 5.0f, 5.0f));
+
 	mModelCube.Load("cube.obj", "cube.mtl");
 	//外壁
 	//後ろ

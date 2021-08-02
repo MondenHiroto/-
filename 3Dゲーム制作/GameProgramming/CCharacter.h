@@ -28,7 +28,8 @@ public:
 
 	enum ETag{
 		EPLAYER,
-		EENEMY
+		EENEMY,
+		EITEM
 	};
 	ETag mTag;
 };

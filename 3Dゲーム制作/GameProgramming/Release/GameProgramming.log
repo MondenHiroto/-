@@ -1,0 +1,118 @@
+﻿2021/08/02 12:32:58 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\81802\Desktop\Repository Game2\Game2\3Dゲーム制作\GameProgramming\GameProgramming.vcxproj" (Build ターゲット)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /Gm- /EHsc /RTC1 /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CBillBoard.cpp CBullet.cpp CCamera.cpp CCharacter.cpp CCollider.cpp CColliderLine.cpp CColliderMesh.cpp CColliderTriangle.cpp CCollisionManager.cpp CCube.cpp CEffect.cpp CEnemy.cpp CItem.cpp CKey.cpp CMaterial.cpp CMatrix.cpp CModel.cpp CPlayer.cpp CSceneGame.cpp CSceneManager.cpp CSound.cpp CTaskManager.cpp CText.cpp CTexture.cpp CTransform.cpp CTriangle.cpp CUtil.cpp CVector.cpp Update.cpp main.cpp
+         CBillBoard.cpp
+         CBullet.cpp
+         CCamera.cpp
+         CCharacter.cpp
+         CCollider.cpp
+         CColliderLine.cpp
+         CColliderMesh.cpp
+     1>CColliderMesh.cpp(24): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+         CColliderTriangle.cpp
+         CCollisionManager.cpp
+         CCube.cpp
+         CEffect.cpp
+         CEnemy.cpp
+         CItem.cpp
+         CKey.cpp
+         CMaterial.cpp
+         CMatrix.cpp
+     1>CMatrix.cpp(57): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>CMatrix.cpp(71): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>CMatrix.cpp(85): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CModel.cpp
+     1>CModel.cpp(16): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>CModel.cpp(47): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 'fopen' の宣言を確認してください。
+     1>CModel.cpp(68): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>CModel.cpp(73): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : 'strncpy' の宣言を確認してください。
+     1>CModel.cpp(98): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 'fopen' の宣言を確認してください。
+     1>CModel.cpp(114): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>CModel.cpp(131): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>CModel.cpp(132): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>CModel.cpp(133): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>CModel.cpp(147): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>CModel.cpp(148): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>CModel.cpp(149): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>CModel.cpp(195): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>CModel.cpp(197): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>CModel.cpp(257): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>CModel.cpp(285): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+         CPlayer.cpp
+     1>CPlayer.cpp(127): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 'sprintf' の宣言を確認してください。
+     1>CPlayer.cpp(133): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 'sprintf' の宣言を確認してください。
+         CSceneGame.cpp
+         CSceneManager.cpp
+         コンパイル中...
+         CSound.cpp
+     1>c:\users\81802\desktop\repository game2\game2\3dゲーム制作\gameprogramming\CSound.h(66): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 'strcpy' の宣言を確認してください。
+     1>c:\users\81802\desktop\repository game2\game2\3dゲーム制作\gameprogramming\CSound.h(101): warning C4101: 'cnt' : ローカル変数は 1 度も使われていません。
+     1>c:\users\81802\desktop\repository game2\game2\3dゲーム制作\gameprogramming\CSound.h(101): warning C4101: 'dw' : ローカル変数は 1 度も使われていません。
+     1>c:\users\81802\desktop\repository game2\game2\3dゲーム制作\gameprogramming\CSound.h(100): warning C4101: 'state' : ローカル変数は 1 度も使われていません。
+         CTaskManager.cpp
+         CText.cpp
+         CTexture.cpp
+     1>CTexture.cpp(48): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 'fopen' の宣言を確認してください。
+     1>CTexture.cpp(55): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 'strcpy' の宣言を確認してください。
+         CTransform.cpp
+         CTriangle.cpp
+         CUtil.cpp
+         CVector.cpp
+         Update.cpp
+         main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\81802\Desktop\Repository Game2\Game2\3Dゲーム制作\Release\GameProgramming.exe" /INCREMENTAL:NO /NOLOGO glew32.lib glfw3.lib glfw3dll.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\81802\Desktop\Repository Game2\Game2\3Dゲーム制作\Release\GameProgramming.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\81802\Desktop\Repository Game2\Game2\3Dゲーム制作\Release\GameProgramming.lib" /MACHINE:X86 /SAFESEH Release\CBillBoard.obj
+         Release\CBullet.obj
+         Release\CCamera.obj
+         Release\CCharacter.obj
+         Release\CCollider.obj
+         Release\CColliderLine.obj
+         Release\CColliderMesh.obj
+         Release\CColliderTriangle.obj
+         Release\CCollisionManager.obj
+         Release\CCube.obj
+         Release\CEffect.obj
+         Release\CEnemy.obj
+         Release\CItem.obj
+         Release\CKey.obj
+         Release\CMaterial.obj
+         Release\CMatrix.obj
+         Release\CModel.obj
+         Release\CPlayer.obj
+         Release\CSceneGame.obj
+         Release\CSceneManager.obj
+         Release\CSound.obj
+         Release\CTaskManager.obj
+         Release\CText.obj
+         Release\CTexture.obj
+         Release\CTransform.obj
+         Release\CTriangle.obj
+         Release\CUtil.obj
+         Release\CVector.obj
+         Release\Update.obj
+         Release\main.obj
+         コード生成しています。
+         コード生成が終了しました。
+         GameProgramming.vcxproj -> C:\Users\81802\Desktop\Repository Game2\Game2\3Dゲーム制作\Release\GameProgramming.exe
+     1>プロジェクト "C:\Users\81802\Desktop\Repository Game2\Game2\3Dゲーム制作\GameProgramming\GameProgramming.vcxproj" (Build ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:05.28

@@ -95,6 +95,7 @@
     <ClCompile Include="CCube.cpp" />
     <ClCompile Include="CEffect.cpp" />
     <ClCompile Include="CEnemy.cpp" />
+    <ClCompile Include="CItem.cpp" />
     <ClCompile Include="CKey.cpp" />
     <ClCompile Include="CMaterial.cpp" />
     <ClCompile Include="CMatrix.cpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="CCube.h" />
     <ClInclude Include="CEffect.h" />
     <ClInclude Include="CEnemy.h" />
+    <ClInclude Include="CItem.h" />
     <ClInclude Include="CKey.h" />
     <ClInclude Include="CMaterial.h" />
     <ClInclude Include="CMatrix.h" />
