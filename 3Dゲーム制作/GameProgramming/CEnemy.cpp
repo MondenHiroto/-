@@ -1,12 +1,13 @@
 #include "CEnemy.h"
 #include "CTaskManager.h"
+#include "CPlayer.h"
 #define VELOCITY 0.11f
 
 //コンストラクタ
 //CEnemy(モデル,位置,回転,拡縮)
 CEnemy::CEnemy(CModel*model, CVector position,
 	CVector rotation, CVector scale)
-	: mCollider1(this, &mMatrix, CVector(0.0f, 0.0f, 15.0f), 3.8f)
+	: mCollider1(this, &mMatrix, CVector(0.0f, 0.0f, 15.0f), 2.0f)
 	, mColliderSearch(this, &mMatrix, CVector(0.0f, 0.0f,0.0f),15000.0f)
 	, mpPlayer(nullptr)
 {
@@ -20,7 +21,9 @@ CEnemy::CEnemy(CModel*model, CVector position,
 	CTaskManager::Get()->Remove(this); //削除して
 	CTaskManager::Get()->Add(this); //追加する
 	mColliderSearch.mTag = CCollider::ESEARCH;
+	mTag = EENEMY;
 	mPoint = mPosition + CVector(0.0f, 0.0f, 100.0f) * mMatrixRotate;
+
 }
 
 
@@ -29,7 +32,7 @@ void CEnemy::Update(){
 	//行列を更新
 	CTransform::Update();
 	//位置を移動
-	mPosition = CVector(0.0f, 0.0f, 1.5f) * mMatrix;
+	mPosition = CVector(0.0f, 0.0f, 2.3f) * mMatrix;
 
 		/*CBullet *bullet = new CBullet();
 		bullet->Set(0.1f, 1.5f);

@@ -12,6 +12,8 @@
 */
 class CPlayer : public CCharacter{
 public:
+	static CPlayer* spInstance;
+
 	//XVˆ—
 	void Update();
 
@@ -31,6 +33,10 @@ public:
 	int Stamina;
 
 	int Time = 301 * 60;
+
+	int PlayerLife;
+
+	int ItemGet;
 };
 
 #endif

@@ -11,6 +11,7 @@
 */
 class CEnemy : public CCharacter{
 public:
+
 	//コンストラクタ
 	//CEnemy(モデル,位置,回転,拡縮)
 	CEnemy(CModel*model, CVector position, CVector rotation, CVector scale);

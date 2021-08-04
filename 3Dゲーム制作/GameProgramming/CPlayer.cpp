@@ -4,16 +4,22 @@
 #include "CKey.h"
 #include "CTaskManager.h"
 #include "CUtil.h"
+#include "CCollider.h"
+
+CPlayer* CPlayer::spInstance = 0;
 
 CPlayer::CPlayer()
 : mLine(this, &mMatrix, CVector(0.0f, 0.0f, -14.0f), CVector(0.0f, 0.0f, 17.0f))
 , mLine2(this, &mMatrix, CVector(0.0f, 5.0f, -8.0f), CVector(0.0f, -3.0f, -8.0f))
 , mLine3(this, &mMatrix, CVector(9.0f, 0.0f, -8.0f), CVector(-9.0f, 0.0f, -8.0f))
 , Stamina(300)
-, mCollider1(this, &mMatrix, CVector(0.0f, 0.0f, 15.0f), 3.8f)
+, PlayerLife(1)
+, ItemGet(0)
+, mCollider1(this, &mMatrix, CVector(0.0f, 0.0f, 0.0f), 0.2f)
 {//テクスファイの読み込み(1行64列)
 	mText.LoadTexture("FontWhite.tga", 1, 64);
 	mTag = EPLAYER;
+	spInstance = this;
 }
 
 //更新処理
@@ -106,6 +112,16 @@ void CPlayer::Collision(CCollider *m, CCollider *o){
 			CTransform::Update();
 		}
 		break;
+	case CCollider::ESPHERE:
+		if (o->mType == CCollider::ESPHERE){
+			if (o->mTag == CCollider::EBODY){
+				if (o->mpParent->mTag == EENEMY){
+					if (CCollider::Collision(m, o)){
+						PlayerLife = 0;
+					}
+				}
+			}
+		}
 	}
 
 }
@@ -133,6 +149,10 @@ void CPlayer::Render()
 	sprintf(buf, "STAMINA:%d", Stamina);
 	//文字列の描画
 	mText.DrawString(buf, 0, 270, 8, 16);
+
+	sprintf(buf, "ITEM:%d", ItemGet);
+	mText.DrawString(buf, -300, 270, 8, 16);
+	mText.DrawString("/4", -200, 270, 8, 16);
 
 	//2Dの描画終了
 	CUtil::End2D();

@@ -28,6 +28,10 @@ CModel mModelItem;
 
 
 void CSceneGame::Init() {
+
+	//シーンの設定
+	mScene = EGAME;
+
 	mEye = CVector(1.0f, 5.0f, 3.0f);
 	//モデルファイルの入力
 	mBackGround.Load("sky.obj", "sky.mtl");
@@ -49,7 +53,16 @@ void CSceneGame::Init() {
 	
 	//アイテムモデルの読み込み
 	mModelItem.Load("sphere.obj", "sphere.mtl");
+	new CItem(&mModelItem, CVector(-80.0f, 3.0f, -100.0f),
+		CVector(0.0f, 0.0f, 0.0f), CVector(5.0f, 5.0f, 5.0f));
+
 	new CItem(&mModelItem, CVector(0.0f, 3.0f, -100.0f),
+		CVector(0.0f, 0.0f, 0.0f), CVector(5.0f, 5.0f, 5.0f));
+
+	new CItem(&mModelItem, CVector(-80.0f, 3.0f, 100.0f),
+		CVector(0.0f, 0.0f, 0.0f), CVector(5.0f, 5.0f, 5.0f));
+
+	new CItem(&mModelItem, CVector(80.0f, 3.0f, 100.0f),
 		CVector(0.0f, 0.0f, 0.0f), CVector(5.0f, 5.0f, 5.0f));
 
 	mModelCube.Load("cube.obj", "cube.mtl");
@@ -261,4 +274,16 @@ void CSceneGame::Update() {
 	CTaskManager::Get()->Render();
 
 	CCollisionManager::Get()->Render();
+
+	if (mPlayer.PlayerLife == 0){
+		mScene = EDEATH;
+	}
+
+	if (mPlayer.ItemGet == 4){
+		mScene = ECLEAR;
+	}
+}
+//次のシーンの取得
+CScene::EScene CSceneGame::GetNextScene() {
+	return mScene;
 }
